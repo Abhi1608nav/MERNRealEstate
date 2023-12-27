@@ -161,7 +161,7 @@ export default function UpdateListing() {
            {
             setError(data.message);
            }
-           navigate(`/listing/${data.listing._id}`)
+           navigate(`/listing/${data._id}`)
         } catch (error) {
             setError(error.messge);
             setLoading(false);
