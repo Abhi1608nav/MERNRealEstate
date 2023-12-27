@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Card from '../components/Card';
+import Listing from './Listing';
 
 export default function Search() {
     const [sidebardata,setSidebardata]=useState({
@@ -15,7 +17,7 @@ export default function Search() {
     const [error,setError]=useState(false);
     const navigate = useNavigate();
     const [loading,setLoading] = useState(false);
-    const [listings,setListings] =useState(null);
+    const [listings,setListings] =useState([]);
 
     const handleChange = (e)=>{
         
@@ -199,8 +201,30 @@ export default function Search() {
             <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-90'>Search</button>
             </form>
         </div>
-        <div className="flex   mx-auto">
+        <div className="flex-1 ">
             <h1 className=' text-3xl text-center border-b p-3 font-semibold mt-3'>Listing results:</h1>
+            
+            <div className='p-7 flex flex-wrap gap-4 '>
+                {
+                    !loading && listings.length === 0 && (
+                        <p className='text-xl text-center text-slate-700'>No listing is Present</p>
+                    )
+                }
+                {
+                    loading && (
+                        <p className='text-xl text-slate-700 text-center w-full'>
+                            Loading...
+                        </p>
+                    )
+                }
+
+                {
+                    !loading && listings && listings.map((listing,index)=>{
+                        return <Card key={index} listing={listing}/>
+                    }) 
+                }
+            </div>
+
         </div>
     </div>
   )
