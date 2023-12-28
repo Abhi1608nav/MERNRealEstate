@@ -168,7 +168,7 @@ export default function UpdateListing() {
         }
     }
   return (
-    <main className='p-3 max-w-6xl mx-auto'>
+    <main className='p-3 max-w-6xl mx-auto min-h-screen'>
         <h1 className='text-3xl font-semibold text-center my-7'>Update a Listing</h1>
         <form onSubmit={handleFormSubmit} className='flex flex-col sm:flex-row gap-6'>
             <div className='flex flex-col gap-4 flex-1'>
