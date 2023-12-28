@@ -66,13 +66,13 @@ export default function Home() {
             <br />
             place with ease
             </h1>
-            <div className="text-gray-600 text-xs sm:text-sm ">
+            <div className="text-gray-600 text-xs sm:text-lg ">
             VastuVilla Ventures is the best place to find your next perfect place to live.
             <br />
             We have a wide range of properties for you to choose from.
 
             </div>
-            <Link to={'/search'} className=' text-xs sm:text-sm text-blue-800 font-bold hover:underline' >
+            <Link to={'/search'} className=' text-xs sm:text-lg text-blue-800 font-bold hover:underline' >
                 Let's get started ...
             </Link>
         </div>
